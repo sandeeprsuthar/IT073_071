@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Home() {
 	return (
@@ -9,14 +11,26 @@ export default function Home() {
 				<div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
 					<div className="flex flex-col justify-center gap-8">
 						<h1 className="h1-bold">
-							Build, Connect, Celebrate: Your Events, Our Platform!
+							<Typewriter
+								words={["Build", "Connect", "Celebrate:"]}
+								loop={true}
+								cursor
+								cursorStyle=""
+								typeSpeed={200}
+								deleteSpeed={100}
+								delaySpeed={2000}
+							/>
 						</h1>
+						<h2 className="h2-bold">Your Events, Our Platform!</h2>
 						<p className="p-regular-20 md:p-regular-24">
 							Transform your events with ease on our all-in-one platform.
 							Connect and celebrate with a global community. Your perfect event,
 							effortlessly managed.
 						</p>
-						<Button size="lg" asChild className="button w-full sm:w-fit">
+						<Button
+							size="lg"
+							asChild
+							className="button w-full sm:w-fit bg-blue-500 text-white border-blue-500 hover:bg-white hover:text-blue-500 transition-colors duration-300">
 							<Link href="#events">Explore Now</Link>
 						</Button>
 					</div>
@@ -25,18 +39,18 @@ export default function Home() {
 						alt="hero"
 						width={1000}
 						height={1000}
-					className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]">
-
-					</Image>
+						className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"></Image>
 				</div>
 			</section>
 
-			<section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-				<h2 className="h2-bold">Trust By <br /> Thousands of Events </h2>
+			<section
+				id="events"
+				className="wrapper my-8 flex flex-col gap-8 md:gap-12">
+				<h1 className="h1-bold">
+					Trust By <br /> Thousands of Events{" "}
+				</h1>
 				<div className="flex w-full flex-col gap-5 md:flex-row">
-					Search 
-					CategaoriesFilter
-
+					Search CategaoriesFilter
 				</div>
 			</section>
 		</>

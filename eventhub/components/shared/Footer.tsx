@@ -9,8 +9,8 @@ const Footer = () => {
 					<Image
 						src="/assets/images/logo1.svg"
 						alt="logo"
-						width={128}
-						height={38}
+						width={110}
+						height={60}
 					/>
 				</Link>
 				<p>2023 EventHub. All Rights reserved</p>
