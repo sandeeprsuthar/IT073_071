@@ -7,8 +7,8 @@ const CreateEvent = () => {
 	const userId = sessionClaims?.userId as string;
 	return (
 		<>
-			<section className="bg-slate-400 bg-dotted-pattern bg-cover bg bg-center py-5 md:py-10 ">
-				<h3 className="wrapper h3-bold text-center sm:text-left">
+			<section className="bg-slate-400 bg-dotted-pattern bg-cover bg bg-center py-5 md:py-10">
+				<h3 className="wrapper h3-bold text-center sm:text-left item-center">
 					Create Event
 				</h3>
 			</section>
