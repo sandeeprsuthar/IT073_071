@@ -15,6 +15,7 @@ type CollectionProps={
 
 const Collection = ({data,emptyTitle,emptyStateSubtext,page,totalPages=0,collectionType,urlParamName,}:CollectionProps) => {
   return (
+
     <>
         {data.length>0  ?(
             <div className='flex flex-col items-center gap-10'>

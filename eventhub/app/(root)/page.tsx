@@ -7,11 +7,12 @@ import { getAllEvents } from "@/lib/actions/event.actions";
 export default async  function Home() {
 	const events = await getAllEvents({
 		query:'',
-		category:'',
+		limit:6,
 		page:1,
-		limit:6
+		category:'',
+		
 	});
-console.log(events);
+
 
 	return (
 		<>
