@@ -16,10 +16,10 @@ export default async  function Home() {
 
 	return (
 		<>
-      <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
-        <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
-          <div className="flex flex-col justify-center gap-8">
-	 <h1 className="h1-bold">Build Connect Celebrate !</h1>
+			<section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
+				<div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
+					<div className="flex flex-col justify-center gap-8">
+						<h1 className="h1-bold">Build Connect Celebrate !</h1>
 						<h2 className="h2-bold">Your Events, Our Platform!</h2>
 						<p className="p-regular-20 md:p-regular-24">
 							Transform your events with ease on our all-in-one platform.
@@ -29,7 +29,7 @@ export default async  function Home() {
 						<Button
 							size="lg"
 							asChild
-							className="button w-full sm:w-fit bg-blue-500 text-white border-blue-500 hover:bg-white hover:text-blue-500 transition-colors duration-300">
+							className="button w-full sm:w-fit scale-80 bg-gradient-to-r from-purple-800 via-blue-900 to-gray-900 text-white border-blue-500 transition-all duration-300 hover:bg-gray-800 hover:text-pink-500 hover:scale-125">
 							<Link href="#events">Explore Now</Link>
 						</Button>
 					</div>
@@ -38,7 +38,8 @@ export default async  function Home() {
 						alt="hero"
 						width={1000}
 						height={1000}
-						className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"/>
+						className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"
+					/>
 				</div>
 			</section>
 
@@ -52,13 +53,13 @@ export default async  function Home() {
 					Search CategaoriesFilter
 				</div>
 				<Collection
-				data={events?.data}
-				emptyTitle="No Events Avaliable"
-				emptyStateSubtext="Come Back Later"
-				collectionType="All_Events"
-				limit={6}
-				page={1}
-				totalPages={2}
+					data={events?.data}
+					emptyTitle="No Events Avaliable"
+					emptyStateSubtext="Come Back Later"
+					collectionType="All_Events"
+					limit={6}
+					page={1}
+					totalPages={2}
 				/>
 			</section>
 		</>
