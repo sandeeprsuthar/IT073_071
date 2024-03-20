@@ -4,18 +4,22 @@ import Link from "next/link";
 import Collection from "@/components/shared/Collection";
 import { getAllEvents } from "@/lib/actions/event.actions";
 import Typewriter from "./TypeEffect";
+import Search from "@/components/shared/Search";
+import { SearchParamProps } from "@/types";
+import CategoryFilter from "@/components/shared/CategoryFilter";
 
-export default async  function Home() {
+export default async function Home({ searchParams }: SearchParamProps) {
+	const page = Number(searchParams?.page) || 1;
+	const searchText = (searchParams?.query as string) || "";
+	const category = (searchParams?.category as string) || "";
 	const events = await getAllEvents({
-		query:'',
-		limit:6,
-		page:1,
-		category:'',
-		
+		query: searchText,
+		category,
+		page,
+		limit: 6,
 	});
 
 	const words = ["Build", "Connect!", "Celebrate!!"];
-
 
 	return (
 		<>
@@ -25,7 +29,7 @@ export default async  function Home() {
 						<h1 className="text-6xl font-bold">
 							<Typewriter words={words} />
 						</h1>
-						
+
 						<h2 className="h2-bold">Your Events, Our Platform!</h2>
 						<p className="p-regular-20 md:p-regular-24">
 							Transform your events with ease on our all-in-one platform.
@@ -56,7 +60,8 @@ export default async  function Home() {
 					Trust By <br /> Thousands of Events{" "}
 				</h1>
 				<div className="flex w-full flex-col gap-5 md:flex-row">
-					Search CategaoriesFilter
+					<Search />
+					<CategoryFilter />
 				</div>
 				<Collection
 					data={events?.data}
@@ -64,8 +69,8 @@ export default async  function Home() {
 					emptyStateSubtext="Come Back Later"
 					collectionType="All_Events"
 					limit={6}
-					page={1}
-					totalPages={2}
+					page={page}
+					totalPages={events?.totalPages}
 				/>
 			</section>
 		</>
