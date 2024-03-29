@@ -144,7 +144,7 @@ export async function getAllEvents({
 }
 
 // GET EVENTS BY ORGANIZER
-export async function getEventByUser({
+export async function getEventsByUser({
 	userId,
 	limit = 6,
 	page,

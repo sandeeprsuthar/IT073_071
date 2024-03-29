@@ -1,5 +1,5 @@
 import Search from "@/components/shared/Search";
-import { getOrderByEvent } from "@/lib/actions/order.action";
+import { getOrdersByEvent } from "@/lib/actions/order.action";
 import { formatDateTime, formatPrice } from "@/lib/utils";
 import { SearchParamProps } from "@/types";
 import { IOrderItem } from "@/lib/database/models/order.model";
@@ -8,7 +8,7 @@ const Orders = async ({ searchParams }: SearchParamProps) => {
 	const eventId = (searchParams?.eventId as string) || "";
 	const searchText = (searchParams?.query as string) || "";
 
-	const orders = await getOrderByEvent({ eventId, searchString: searchText });
+	const orders = await getOrdersByEvent({ eventId, searchString: searchText });
 
 	return (
 		<>
