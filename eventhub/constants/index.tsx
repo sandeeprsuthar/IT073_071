@@ -48,8 +48,8 @@ export const SIDENAV_ITEMS: SideNavItems[] = [
 				icon: <MdOutlineUpcoming size={20} />,
 			},
 			{
-				title: "All Events",
-				path: "/admin/events/allevents",
+				title: "Completed Events",
+				path: "/admin/events/completed",
 				icon: <SiEventstore size={20} />,
 			},
 		],

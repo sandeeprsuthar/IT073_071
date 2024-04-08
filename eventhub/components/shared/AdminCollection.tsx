@@ -1,21 +1,29 @@
-import { IEvent } from '@/lib/database/models/event.model'
-import React from 'react'
-import Card from './Card'
-import Pagination from './Pagination'
+import { IEvent } from "@/lib/database/models/event.model";
+import React from "react";
+import Pagination from "./Pagination";
+import AdminCard from "./AdminCard";
 
-type CollectionProps={
-    data:IEvent[],
-    emptyTitle:string,
-    emptyStateSubtext:string,
-    limit:number,
-    page:number | string,
-    totalPages?:number,
-    urlParamName?:string,
-    collectionType?:'Event_Organized' | 'My_Tickets' |'All_Events'
-}
+type CollectionProps = {
+	data: IEvent[];
+	emptyTitle: string;
+	emptyStateSubtext: string;
+	limit: number;
+	page: number | string;
+	totalPages?: number;
+	urlParamName?: string;
+	collectionType?: "Event_Organized" | "My_Tickets" | "All_Events";
+};
 
-const Collection = ({data,emptyTitle,emptyStateSubtext,page,totalPages=0,collectionType,urlParamName,}:CollectionProps) => {
-  return (
+const AdminCollection = ({
+	data,
+	emptyTitle,
+	emptyStateSubtext,
+	page,
+	totalPages = 0,
+	collectionType,
+	urlParamName,
+}: CollectionProps) => {
+	return (
 		<>
 			{data.length > 0 ? (
 				<div className="flex flex-col items-center gap-10">
@@ -25,7 +33,7 @@ const Collection = ({data,emptyTitle,emptyStateSubtext,page,totalPages=0,collect
 							const hidePrice = collectionType === "My_Tickets";
 							return (
 								<li key={event._id} className="flex justify-center">
-									<Card
+									<AdminCard
 										event={event}
 										hasOrderLink={hasOrderLink}
 										hidePrice={hidePrice}
@@ -51,6 +59,6 @@ const Collection = ({data,emptyTitle,emptyStateSubtext,page,totalPages=0,collect
 			)}
 		</>
 	);
-}
+};
 
-export default Collection
+export default AdminCollection;

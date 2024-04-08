@@ -5,11 +5,11 @@ import React from "react";
 
 type UpdateEventProps = {
 	params: {
-		id: string
-	}
-}
+		id: string;
+	};
+};
 
-const UpdateEvent = async({ params: { id } }: UpdateEventProps) => {
+const UpdateEvent = async ({ params: { id } }: UpdateEventProps) => {
 	const event = await getEventById(id);
 	const { sessionClaims } = auth();
 	const userId = sessionClaims?.userId as string;
@@ -25,7 +25,8 @@ const UpdateEvent = async({ params: { id } }: UpdateEventProps) => {
 					userId={userId}
 					type="Update"
 					event={event}
-					eventId={event._id} />
+					eventId={event._id}
+				/>
 			</div>
 		</>
 	);
